@@ -1,0 +1,83 @@
+.card{
+    background: $white-clr;
+    border-radius: 1em;
+    box-shadow: $light-shadow;
+
+    position: relative;
+    overflow: hidden;
+
+    &:hover{
+        box-shadow: $dark-shadow;
+    }
+
+    &_img_container{
+        background: url(../img/navBg.jpg) no-repeat center/cover;
+        position: relative;
+        text-align: center;
+
+        &::after{
+            content: '';
+            position: absolute;
+            top: 8px;
+            left:8px;
+            bottom:8px;
+            right:8px;
+            border: 1px solid $clr-light-blue;
+            border-radius: 1em;
+        }
+    }
+
+    &_img{
+        max-width: 100%;
+        height: auto;
+        max-height: 300px;
+        transform: scale(.8);
+    }
+
+    &_body{
+        @include flexConfig(space-between);
+        padding: .5em 1em;
+    }
+
+    &_price{
+        display: inline-block;
+        font-weight: 700;
+        margin-right: 6px;
+        vertical-align: middle;
+    }
+
+    &_details_link{
+        position: absolute;
+        right: -100%;
+        bottom: 14%;
+        transition: right .3s ease-in;
+
+        a.details_btn{
+            display: inline-block;
+            text-decoration: none;
+            color: $white-clr;
+            background-color: $dark-grey;
+            font-family: $ff;
+        }
+    }
+    &:hover &_details_link{
+        right: 9px;
+    }
+}
+
+@media (max-width:520px){
+    .card_body{
+      flex-direction: column;
+    }
+    .card_body_title{
+      margin-bottom: .5rem;
+    }
+    .card_details_link{
+
+        bottom: 70px;
+        
+        a.details_btn{
+            font-size: 12px;
+        }
+    }
+  }

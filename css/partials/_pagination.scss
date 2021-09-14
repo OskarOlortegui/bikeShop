@@ -1,0 +1,12 @@
+.pagination-wrapper{
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.pagination-wrapper .btn.page{
+    display: inline-block;
+    color: $white-clr;
+    background-color: $dark-grey;
+    font-family: $ff;
+    border:none;
+}

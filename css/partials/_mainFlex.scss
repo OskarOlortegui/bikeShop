@@ -1,0 +1,25 @@
+main{
+    min-height: calc(60vh - 80px);
+    display: flex;
+    width: 200%;
+}
+.product-content,
+.cart-content{
+   flex: 1;
+}
+.product-content.activeLeft,
+.cart-content.activeLeft{
+    animation: moveLeft .3s ease-in forwards;
+}
+.product-content.activeRight,
+.cart-content.activeRight{
+    animation: moveRight .3s ease-in forwards;
+}
+@keyframes moveLeft{
+    from{transform: translateX(0)}
+    to{transform: translateX(-100%);}
+}
+@keyframes moveRight{
+    from {transform: translateX(-100%);}
+    to {transform: translateX(0)}
+}

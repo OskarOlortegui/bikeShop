@@ -1,0 +1,34 @@
+header{
+    background: url(../img/navBg.jpg) no-repeat center/cover;
+    padding: .5rem .85rem;
+    box-shadow: $dark-shadow;
+}
+nav{
+    @include flexConfig(space-between);
+    padding: 1rem 1.3rem;
+}
+.logo-box i{
+    opacity: .5;
+    transition: opacity .15s ease-in;
+}
+.logo-box:hover i{
+    opacity: 1;
+}
+
+.navbar{
+    padding: 0;
+    list-style: none;
+    display: flex;
+
+    &_link{
+        margin-left: .5rem;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 1.2rem;
+
+        &:hover,
+        &.active{
+            color: $nice-blue;
+        }
+    }
+}

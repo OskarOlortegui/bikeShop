@@ -1,0 +1,12 @@
+.cart_foot{
+    text-align: center;
+
+    &_details{
+        @include flexConfig(space-between);
+        margin-bottom: 1.4rem;
+
+        h1{
+            margin: 0 1rem;
+        }
+    }
+}

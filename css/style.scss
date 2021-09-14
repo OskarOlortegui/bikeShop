@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+
+$clr-light-blue: #f1f5f8;
+$ff: 'Open Sans', sans-serif;
+$light-shadow: 0 5px 10px rgba(0,0,0,.1);
+$dark-shadow: 0 5px 15px rgba(0,0,0,.2);
+$nice-blue: #2083f8;
+$white-clr: #fff;
+$danger-clr: #fb6c6d;
+$light-grey: #cdcdcd;
+$grey-clr: #bcc1c4;
+$dark-grey: #333;
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin:0;
+}
+
+@mixin flexConfig($jstf-cnt) {
+    display: flex;
+    align-items: center;
+    justify-content: $jstf-cnt;
+}
+
+@mixin color($val){
+    @if $val == rojo {color: $danger-clr;}
+    @else if $val == azul {color: $nice-blue;}
+}
+
+/*general*/
+body{
+    font-family: $ff;
+    line-height: 1.2;
+    background: $clr-light-blue;
+
+    overflow-x: hidden;
+}
+
+.content{
+    max-width: 768px;
+    margin: 2em auto;
+    padding: 0 1rem;
+
+    // max-height: 450px;/*esta altura es solo cuando agregamos pagination*/
+}
+.section-title{
+    letter-spacing: 4px;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: .8em;
+}
+
+@import './partials/btnSettings';
+@import './partials/alert';
+
+/*header*/
+@import './partials/header';
+/*main*/
+@import './partials/mainFlex';
+
+/*Sections...*/
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+}
+@import './partials/card';
+
+/*Cart*/
+#cart{
+    margin-bottom: 1rem;
+}
+.section-subTitle{
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+.cart_items,
+.cart_foot{
+    padding: 0 1rem;
+}
+
+@import './partials/cartItem';
+@import './partials/cartFoot';
+@import './partials/details';
+@import './partials/pagination';
